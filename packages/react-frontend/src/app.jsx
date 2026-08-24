@@ -16,7 +16,7 @@ export function App() {
           <img src={viteLogo} class="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Get started</h1>
+          <h1>Hello from Saina!</h1>
           <p>
             Edit <code>src/app.jsx</code> and save to test <code>HMR</code>
           </p>
