@@ -1,5 +1,14 @@
-import { render } from 'preact'
-import './index.css'
-import { App } from './app.jsx'
+// src/main.jsx
+import React from "react";
+import ReactDOMClient from "react-dom/client";
+import MyApp from "./MyApp";
+import "./main.css";
 
-render(<App />, document.getElementById('app'))
+// Create the container
+const container = document.getElementById("root");
+
+// Create a root
+const root = ReactDOMClient.createRoot(container);
+
+// Initial render:
+root.render(<MyApp />);

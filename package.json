@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npm run dev -w react-frontend",
+    "build": "npm run build -w react-frontend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
