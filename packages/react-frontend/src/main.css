@@ -1,67 +1,27 @@
-:root {
-  --ink: #1f2328;
-  --line: #d6dae0;
-  --accent: #2f5fa8;
-}
-
-body {
-  margin: 0;
-  color: var(--ink);
-  font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  line-height: 1.55;
-}
-
 .container {
-  max-width: 44rem;
-  margin: 3rem auto;
-  padding: 0 1.25rem;
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
 }
 
-th,
-td {
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
   text-align: left;
-  padding: 0.6rem 0.75rem;
-  border-bottom: 1px solid var(--line);
 }
 
-form {
-  display: grid;
-  grid-template-columns: 5rem 1fr;
-  gap: 0.6rem 1rem;
-  align-items: center;
-  max-width: 26rem;
+label {
+  display: block;
+  margin-top: 10px;
 }
 
-input[type="text"] {
-  padding: 0.45rem 0.6rem;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  font: inherit;
-}
-
-input[type="button"] {
-  grid-column: 2;
-  justify-self: start;
-  padding: 0.45rem 1.1rem;
-  border: 1px solid var(--accent);
-  border-radius: 3px;
-  background: var(--accent);
-  color: #fff;
-  font: inherit;
-  cursor: pointer;
-}
-
-button {
-  padding: 0.25rem 0.7rem;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  background: #f4f6f8;
-  font: inherit;
-  cursor: pointer;
+input {
+  padding: 5px;
+  margin-top: 3px;
 }
