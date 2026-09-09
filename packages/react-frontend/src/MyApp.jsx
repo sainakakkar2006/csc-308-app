@@ -26,11 +26,21 @@ function MyApp() {
   }
 
 
-  function removeOneCharacter(index) {
-    const updated = characters.filter((character, i) => {
-      return i !== index;
+    function deleteUser(id) {
+    return fetch(`http://localhost:8000/users/${id}`, {
+      method: "DELETE",
     });
-    setCharacters(updated);
+  }
+
+  function removeOneCharacter(id) {
+    deleteUser(id)
+      .then((response) => {
+        if (response.status === 204) {
+          const updated = characters.filter((character) => character.id !== id);
+          setCharacters(updated);
+        }
+      })
+      .catch((error) => console.error(error));
   }
 
     function updateList(person) {
