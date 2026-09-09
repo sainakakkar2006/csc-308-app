@@ -34,6 +34,19 @@ app.post("/users", (req, res) => {
   users.push(newUser);
   res.status(201).json(newUser);
 });
+app.delete("/users/:id", (req, res) => {
+  const user = users.find((currentUser) => currentUser.id === req.params.id);
+
+  if (!user) {
+    return res.status(404).send("User not found.");
+  }
+
+  const index = users.indexOf(user);
+  users.splice(index, 1);
+
+  return res.status(204).send();
+});
+
 
 app.get("/users/:id", (req, res) => {
   const user = users.find((currentUser) => currentUser.id === req.params.id);
