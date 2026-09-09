@@ -15,6 +15,16 @@ function MyApp() {
       .then((users) => setCharacters(users))
       .catch((error) => console.error(error));
   }, []);
+  function postUser(person) {
+    return fetch("http://localhost:8000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(person),
+    });
+  }
+
 
   function removeOneCharacter(index) {
     const updated = characters.filter((character, i) => {
@@ -23,8 +33,19 @@ function MyApp() {
     setCharacters(updated);
   }
 
-  function updateList(person) {
-    setCharacters([...characters, person]);
+    function updateList(person) {
+    postUser(person)
+      .then((response) => {
+        if (response.status === 201) {
+          return response.json();
+        }
+      })
+      .then((user) => {
+        if (user) {
+          setCharacters([...characters, user]);
+        }
+      })
+      .catch((error) => console.error(error));
   }
 
   return (
