@@ -3,7 +3,7 @@ import cors from "cors";
 const app = express();
 const port = 8000;
 app.use(cors());
-
+app.use(express.json());
 const users = [
   { id: "123", name: "Mack", job: "Director" },
   { id: "124", name: "Cindy", job: "Manager" },
@@ -23,6 +23,16 @@ app.get("/users", (req, res) => {
   );
 
   res.json(matchingUsers);
+});
+app.post("/users", (req, res) => {
+  const newUser = {
+    id: Math.floor(Math.random() * 1000000).toString(),
+    name: req.body.name,
+    job: req.body.job,
+  };
+
+  users.push(newUser);
+  res.status(201).json(newUser);
 });
 
 app.get("/users/:id", (req, res) => {
