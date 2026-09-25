@@ -36,7 +36,7 @@ function MyApp() {
     deleteUser(id)
       .then((response) => {
         if (response.status === 204) {
-          const updated = characters.filter((character) => character.id !== id);
+          const updated = characters.filter((character) => character._id !== id);
           setCharacters(updated);
         }
       })
